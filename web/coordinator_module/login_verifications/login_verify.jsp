@@ -14,7 +14,7 @@
     <body>
         <h1>Please wait!</h1>
         <%
-            session.setAttribute("user_string", "Sample Text!!!");
+            session.setAttribute("user_string", "Sample User");
             request.getRequestDispatcher("../index.jsp").forward(request, response);
         %>
     </body>

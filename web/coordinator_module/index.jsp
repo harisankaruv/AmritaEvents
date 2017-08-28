@@ -17,6 +17,8 @@
         <%
             String u=request.getSession().getAttribute("user_string").toString();
         %>
-        <%=u%>
+        <p>Welcome <%=u%>!</p>
+        <hr>
+        
     </body>
 </html>
