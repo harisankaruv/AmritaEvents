@@ -66,8 +66,8 @@
 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="./index.jsp">Home</a>
-            <a href="coordinator_content/events.jsp">Events</a>
+            <a href="../index.jsp">Home</a>
+            <a href="./events.jsp">Events</a>
             <a href="#">Programs</a>
             <a href="#">Volunteer</a>
             <a href="#">About</a>
@@ -82,6 +82,18 @@
             </span><div class="w3-card w3-white w3-padding-32">
                 <center>
                 <div class="w3-container">
+                    <a href="#">
+                        <button class="w3-button">Add Events</button>
+                    </a><br>
+                    <a href="#">
+                        <button class="w3-button">Update Events</button>
+                    </a><br>
+                    <a href="#">
+                        <button class="w3-button">Suspend/Resume Events</button>
+                    </a><br>
+                    <a href="#">
+                        <button class="w3-button">Delete Events</button>
+                    </a>
                 </div>
                 </center>
             </div>

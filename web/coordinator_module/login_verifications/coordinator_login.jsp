@@ -68,7 +68,7 @@
     </head>
     <body>
         <%
-            //Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.jdbc.Driver");
             String url="jdbc:mysql://localhost:3306/aems";
             String user="root";
             String psd="";
@@ -79,9 +79,6 @@
                 st.executeUpdate(sql);
             }
             catch(Exception exp){
-        %>
-        <%=exp.getMessage()%>
-        <%
             }
         %>
         <div id="mySidenav" class="sidenav">
@@ -100,9 +97,9 @@
                 <div class="w3-container">
                     <form method="post" action="login_verify.jsp">
                         <label for="staff_id">Staff ID</label>
-                        <input type="text" placeholder="Enter Staff ID" class="w3-input w3-center" id="staff_id"/><br>
+                        <input type="text" placeholder="Enter Staff ID" class="w3-input w3-center" name="staff_id"/><br>
                         <label for="staff_psd">Password</label>
-                        <input type="password" placeholder="Enter Password" class="w3-input w3-center" id="staff_psd"/>
+                        <input type="password" placeholder="Enter Password" class="w3-input w3-center" name="staff_psd"/>
                         <br>
                         <input type="submit" value="Login" class="w3-button"/>
                     </form>
