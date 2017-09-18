@@ -1,19 +1,15 @@
 <%-- 
-    Document   : coordinator_login
-    Created on : Aug 28, 2017, 5:46:28 PM
+    Document   : index
+    Created on : Sep 18, 2017, 2:22:05 PM
     Author     : haris
 --%>
 
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.DriverManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Coordinator Login</title>
+        <title>Amrita Events</title>
         <link href="style/style.css" type="text/css" rel="stylesheet"/>
         <style>
             body {
@@ -67,47 +63,20 @@
         </style>
     </head>
     <body>
-        <%
-            //Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String url="jdbc:mysql://localhost:3306/aems";
-            String user="root";
-            String psd="";
-            try{
-                Connection con = DriverManager.getConnection(url, user, psd);
-                Statement st=con.createStatement();
-                String sql="CREATE TABLE IF NOT EXISTS `aems`.`STAFF_DETAILS` ( `STAFF_ID` INT NOT NULL , `STAFF_PSD` VARCHAR(20) NOT NULL , `STAFF_NAME` VARCHAR(25) NOT NULL , `STAFF_DEPT` VARCHAR(25) NOT NULL , `STAFF_DESIG` VARCHAR(25) NOT NULL , `STAFF_MAIL` VARCHAR(25) NULL , `STAFF_PHONE` BIGINT NULL , PRIMARY KEY (`STAFF_ID`)) ENGINE = InnoDB;";
-                st.executeUpdate(sql);
-            }
-            catch(Exception exp){
-        %>
-        <%=exp.getMessage()%>
-        <%
-            }
-        %>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="../../index.jsp">Home</a>
+            <a href="./index.jsp">Home</a>
             <a href="./coordinator_module/login_verifications/coordinator_login.jsp">Coordinator Login</a>
             <a href="#">Committee Login</a>
             <a href="#">Contact</a>
             <a href="#">About</a>
         </div>
 
-        <div id="main" class="w3-container w3-black">
+        <div id="main" class="w3-black">
             <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|</span>
-            <div class="w3-card w3-white w3-padding-32">
-                <center>
-                <div class="w3-container">
-                    <form method="post" action="login_verify.jsp">
-                        <label for="staff_id">Staff ID</label>
-                        <input type="text" placeholder="Enter Staff ID" class="w3-input w3-center" id="staff_id"/><br>
-                        <label for="staff_psd">Password</label>
-                        <input type="password" placeholder="Enter Password" class="w3-input w3-center" id="staff_psd"/>
-                        <br>
-                        <input type="submit" value="Login" class="w3-button"/>
-                    </form>
-                </div>
-                </center>
+            
+            <div class="w3-container w3-white">
+                
             </div>
         </div>
 
