@@ -73,7 +73,7 @@
         </div>
 
         <div id="main" class="w3-black">
-            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|</span>
+            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|Home</span>
             
             <div class="w3-container w3-white">
                 

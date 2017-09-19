@@ -63,6 +63,9 @@
         </style>
     </head>
     <body>
+                <%
+                    String user=(String)session.getAttribute("username");
+                %>
 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -74,25 +77,26 @@
         </div>
 
         <div id="main" class="w3-black">
-            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|
-                <%
-                    String user=(String)session.getAttribute("username");
-                %>
-                <%=user%>
+            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; <%=user%>|<b>Event</b> Management</span>
+            <div class="w3-right">
+                <form method="get" action="../logout.jsp">
+                    <input type="submit" value="Log Out" class="w3-button w3-hover-white w3-black"/>
+                </form>
+            </div>
             </span><div class="w3-card w3-white w3-padding-32">
                 <center>
                 <div class="w3-container">
                     <a href="#">
-                        <button class="w3-button">Add Events</button>
-                    </a><br>
+                        <input type="button" value="Add Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
+                    </a><br><br>
                     <a href="#">
-                        <button class="w3-button">Update Events</button>
-                    </a><br>
+                        <input type="button" value="Update Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
+                    </a><br><br>
                     <a href="#">
-                        <button class="w3-button">Suspend/Resume Events</button>
-                    </a><br>
+                        <input type="button" value="Suspend/Resume Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
+                    </a><br><br>
                     <a href="#">
-                        <button class="w3-button">Delete Events</button>
+                        <input type="button" value="Delete Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
                     </a>
                 </div>
                 </center>

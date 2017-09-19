@@ -65,8 +65,13 @@
                 .sidenav a {font-size: 18px;}
             }
         </style>
+        <script>
+            function gainfocus(){
+                document.getElementById('staff_id').focus();
+            }
+        </script>
     </head>
-    <body>
+    <body onload="gainfocus()">
         <%
             Class.forName("com.mysql.jdbc.Driver");
             String url="jdbc:mysql://localhost:3306/aems";
@@ -91,20 +96,23 @@
         </div>
 
         <div id="main" class="w3-container w3-black">
-            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|</span>
-            <div class="w3-card w3-white w3-padding-32">
+            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|Coordinator Login</span>
+            <div class="w3-card w3-white w3-padding-32" style="margin-top: 10%; height: 100%; ">
                 <center>
-                <div class="w3-container">
+                <div class="w3-container" style="width: 50%">
                     <form method="post" action="login_verify.jsp">
                         <label for="staff_id">Staff ID</label>
-                        <input type="text" placeholder="Enter Staff ID" class="w3-input w3-center" name="staff_id"/><br>
+                        <input type="text" placeholder="Enter Staff ID" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="staff_id"/><br>
                         <label for="staff_psd">Password</label>
-                        <input type="password" placeholder="Enter Password" class="w3-input w3-center" name="staff_psd"/>
+                        <input type="password" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="staff_psd"/>
                         <br>
                         <input type="submit" value="Login" class="w3-button"/>
                     </form>
                 </div>
                 </center>
+            </div>
+            <div class="w3-card w3-black w3-padding-32 w3-center" style="margin-top: 10%">
+                <p class="w3-text-white">Copyright &copy T3</p>
             </div>
         </div>
 

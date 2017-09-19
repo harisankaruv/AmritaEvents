@@ -4,6 +4,7 @@
     Author     : haris
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -63,7 +64,9 @@
         </style>
     </head>
     <body>
-
+        <%
+            String user=(String)request.getSession(true).getAttribute("username");
+        %>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="./index.jsp">Home</a>
@@ -75,11 +78,14 @@
 
         <div id="main" class="w3-black">
             <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|
-                <%
-                    String user=(String)session.getAttribute("username");
-                %>
                 <%=user%>
-            </span><div class="w3-card w3-white w3-padding-32">
+            </span>
+            <div class="w3-right">
+                <form method="get" action="logout.jsp">
+                    <input type="submit" value="Log Out" class="w3-button w3-hover-white w3-black"/>
+                </form>
+            </div>
+            <div class="w3-card w3-white w3-padding-32">
                 <center>
                 <div class="w3-container">
                 </div>
@@ -100,6 +106,5 @@
                 document.body.style.backgroundColor = "white";
             }
         </script>
-        
     </body>
 </html>

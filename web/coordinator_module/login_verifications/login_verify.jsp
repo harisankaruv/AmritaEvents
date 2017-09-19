@@ -31,8 +31,9 @@
                 rs.next();
                 if(rs!=null){
                     session.setAttribute("username", rs.getString(3));
-                    RequestDispatcher rd=request.getRequestDispatcher("../index.jsp");
-                    rd.forward(request, response);
+                    response.sendRedirect("../index.jsp");
+                    //RequestDispatcher rd=request.getRequestDispatcher("../index.jsp");
+                    //rd.forward(request, response);
                 }
             }
             catch(Exception exp){
