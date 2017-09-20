@@ -73,24 +73,13 @@
     </head>
     <body onload="gainfocus()">
         <%
-            Class.forName("com.mysql.jdbc.Driver");
-            String url="jdbc:mysql://localhost:3306/aems";
-            String user="root";
-            String psd="";
-            try{
-                Connection con = DriverManager.getConnection(url, user, psd);
-                Statement st=con.createStatement();
-                String sql="CREATE TABLE IF NOT EXISTS `aems`.`STAFF_DETAILS` ( `STAFF_ID` INT NOT NULL , `STAFF_PSD` VARCHAR(20) NOT NULL , `STAFF_NAME` VARCHAR(25) NOT NULL , `STAFF_DEPT` VARCHAR(25) NOT NULL , `STAFF_DESIG` VARCHAR(25) NOT NULL , `STAFF_MAIL` VARCHAR(25) NULL , `STAFF_PHONE` BIGINT NULL , PRIMARY KEY (`STAFF_ID`)) ENGINE = InnoDB;";
-                st.executeUpdate(sql);
-            }
-            catch(Exception exp){
-            }
+            
         %>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="../../index.jsp">Home</a>
-            <a href="./coordinator_module/login_verifications/coordinator_login.jsp">Coordinator Login</a>
-            <a href="../../committee_module/login_verifications/committee_login.jsp">Committee Login</a>
+            <a href="../../coordinator_module/login_verifications/coordinator_login.jsp">Coordinator Login</a>
+            <a href="#">Committee Login</a>
             <a href="#">Contact</a>
             <a href="#">About</a>
         </div>
@@ -101,10 +90,10 @@
                 <center>
                 <div class="w3-container" style="width: 50%">
                     <form method="post" action="login_verify.jsp">
-                        <label for="staff_id">Staff ID</label>
-                        <input type="text" placeholder="Enter Staff ID" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="staff_id"/><br>
-                        <label for="staff_psd">Password</label>
-                        <input type="password" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="staff_psd"/>
+                        <label for="stud_id">Volunteer ID</label>
+                        <input type="text" placeholder="Enter Staff ID" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="stud_id"/><br>
+                        <label for="stud_psd">Password</label>
+                        <input type="password" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="stud_psd"/>
                         <br>
                         <input type="submit" value="Login" class="w3-button"/>
                     </form>

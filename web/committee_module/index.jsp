@@ -1,15 +1,16 @@
 <%-- 
     Document   : index
-    Created on : Sep 18, 2017, 2:22:05 PM
+    Created on : Aug 28, 2017, 5:58:57 PM
     Author     : haris
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Amrita Events</title>
+        <title>Welcome</title>
         <link href="style/style.css" type="text/css" rel="stylesheet"/>
         <style>
             body {
@@ -63,20 +64,30 @@
         </style>
     </head>
     <body>
+        <%
+            String user=(String)request.getSession(true).getAttribute("username");
+        %>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="./index.jsp">Home</a>
-            <a href="./coordinator_module/login_verifications/coordinator_login.jsp">Coordinator Login</a>
-            <a href="./committee_module/login_verifications/committee_login.jsp">Committee Login</a>
-            <a href="#">Contact</a>
-            <a href="#">About</a>
+            <a href="#">Registration</a>
+            <a href="#">Accounts</a>
         </div>
 
         <div id="main" class="w3-black">
-            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|Home</span>
-            
-            <div class="w3-container w3-white">
-                
+            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|
+                <%=user%>
+            </span>
+            <div class="w3-right">
+                <form method="get" action="logout.jsp">
+                    <input type="submit" value="Log Out" class="w3-button w3-hover-white w3-black"/>
+                </form>
+            </div>
+            <div class="w3-card w3-white w3-padding-32">
+                <center>
+                <div class="w3-container">
+                </div>
+                </center>
             </div>
         </div>
 
