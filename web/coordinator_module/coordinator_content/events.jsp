@@ -86,7 +86,7 @@
             </span><div class="w3-card w3-white w3-padding-32">
                 <center>
                 <div class="w3-container">
-                    <a href="#">
+                    <a href="./addEvents.jsp">
                         <input type="button" value="Add Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
                     </a><br><br>
                     <a href="#">

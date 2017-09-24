@@ -85,7 +85,7 @@
         </div>
 
         <div id="main" class="w3-container w3-black">
-            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|Coordinator Login</span>
+            <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; Amrita <b>Events</b>|Committee Login</span>
             <div class="w3-card w3-white w3-padding-32" style="margin-top: 10%; height: 100%; ">
                 <center>
                 <div class="w3-container" style="width: 50%">
