@@ -77,43 +77,43 @@
         %>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="../../index.jsp">Home</a>
-            <a href="./coordinator_module/login_verifications/coordinator_login.jsp">Coordinator Login</a>
-            <a href="../../committee_module/login_verifications/committee_login.jsp">Committee Login</a>
-            <a href="#">Contact</a>
+            <a href="../index.jsp">Home</a>
+            <a href="coordinator_content/events.jsp">Events</a>
+            <a href="#">Programs</a>
+            <a href="#">Volunteer</a>
             <a href="#">About</a>
         </div>
 
         <div id="main" class="w3-container w3-black">
             <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776; <%=user%>|<b>Event</b> Management</span>
-            <div class="w3-card w3-white w3-padding-32" style="margin-top: 10%; height: 100%; ">
+            <div class="w3-card w3-white w3-padding-32" style="margin-top: 5%; height: 100%; ">
                 <center>
                 <div class="w3-container" style="width: 50%">
                     <form method="post" action="login_verify.jsp">
                         <label for="">Event ID</label>
-                        <input type="text" placeholder="Enter Staff ID" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name=""/><br>
+                        <input type="text" placeholder="Enter Event ID" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_id"/><br>
                         <label for="">Event Name</label>
-                        <input type="text" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name=""/>
+                        <input type="text" placeholder="Enter Name" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_name"/>
                         <br>
                         <label for="">Event Tag-line (Optional)</label>
-                        <input type="text" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name=""/>
+                        <input type="text" placeholder="Enter Tag-Line" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_tag"/>
                         <br>
                         <label for="">Event Location</label>
-                        <input type="text" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name=""/>
+                        <input type="text" placeholder="Enter Location" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
                         <br>
                         <label for="">Event Timestamp</label>
-                        <input type="datetime-local" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name=""/>
+                        <input type="datetime-local" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_time"/>
                         <br>
-                        <label for="">Event Description</label>
-                        <textarea row="50" col="50" placeholder="Add '\n' for new paragraphs"></textarea>
+                        <label for="">Event Description</label><br>
+                        <textarea row="100" col="50" placeholder="Type Event Description here. Add '\n' for new paragraphs" class="w3-input" name="event_desc"></textarea>
                         <br>
                         <label for="">Event Contact (Phone)</label>
-                        <input type="tel" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name=""/>
+                        <input type="tel" placeholder="Enter Phone" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_ph"/>
                         <br>
                         <label for="">Event Contact (Email)</label>
-                        <input type="email" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name=""/>
+                        <input type="email" placeholder="Enter E-Mail" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_em"/>
                         <br>
-                        <input type="submit" value="Login" class="w3-button"/>
+                        <input type="submit" value="Submit" class="w3-button"/>
                     </form>
                 </div>
                 </center>
