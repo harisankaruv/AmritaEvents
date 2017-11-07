@@ -21,7 +21,7 @@
                 String s_psd=request.getParameter("stud_psd");
             try{
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
-                String url="jdbc:mysql://localhost:3306/aems";
+                String url="jdbc:mysql://localhost:3306/amritaeventms";
                 String user="root";
                 String psd="";
                 Connection con=DriverManager.getConnection(url, user, psd);

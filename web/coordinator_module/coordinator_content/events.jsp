@@ -89,7 +89,7 @@
                     <a href="./addEvents.jsp">
                         <input type="button" value="Add Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
                     </a><br><br>
-                    <a href="#">
+                    <a href="./updateEvent.jsp">
                         <input type="button" value="Update Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
                     </a><br><br>
                     <a href="#">

@@ -21,7 +21,7 @@
                 String s_psd=request.getParameter("staff_psd");
             try{
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
-                String url="jdbc:mysql://localhost:3306/aems";
+                String url="jdbc:mysql://localhost:3306/amritaeventms";
                 String user="root";
                 String psd="";
                 Connection con=DriverManager.getConnection(url, user, psd);
@@ -30,6 +30,7 @@
                 ResultSet rs=st.executeQuery(sql);
                 rs.next();
                 if(rs!=null){
+                    session.setAttribute("userid", rs.getInt(1));
                     session.setAttribute("username", rs.getString(3));
                     response.sendRedirect("../index.jsp");
                     //RequestDispatcher rd=request.getRequestDispatcher("../index.jsp");

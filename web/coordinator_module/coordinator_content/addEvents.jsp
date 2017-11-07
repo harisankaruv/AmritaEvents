@@ -74,11 +74,12 @@
     <body onload="gainfocus()">
         <%
             String user=(String)session.getAttribute("username");
+            session.setAttribute("eventFn", "addEvent");
         %>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="../index.jsp">Home</a>
-            <a href="coordinator_content/events.jsp">Events</a>
+            <a href="./events.jsp">Events</a>
             <a href="#">Programs</a>
             <a href="#">Volunteer</a>
             <a href="#">About</a>
@@ -89,9 +90,15 @@
             <div class="w3-card w3-white w3-padding-32" style="margin-top: 5%; height: 100%; ">
                 <center>
                 <div class="w3-container" style="width: 50%">
-                    <form method="post" action="login_verify.jsp">
-                        <label for="">Event ID</label>
-                        <input type="text" placeholder="Enter Event ID" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_id"/><br>
+                    <%
+                        if((String)session.getAttribute("processDone")=="yes"){
+                    %>
+                    <span class="w3-text-gray">Event successfully added!</span>
+                    <%
+                            session.setAttribute("processDone","no");
+                        }
+                    %>
+                    <form method="post" action="eventCarousel.jsp">
                         <label for="">Event Name</label>
                         <input type="text" placeholder="Enter Name" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_name"/>
                         <br>
@@ -101,8 +108,8 @@
                         <label for="">Event Location</label>
                         <input type="text" placeholder="Enter Location" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
                         <br>
-                        <label for="">Event Timestamp</label>
-                        <input type="datetime-local" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_time"/>
+                        <label for="">Event Date</label>
+                        <input type="date" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_date"/>
                         <br>
                         <label for="">Event Description</label><br>
                         <textarea row="100" col="50" placeholder="Type Event Description here. Add '\n' for new paragraphs" class="w3-input" name="event_desc"></textarea>
