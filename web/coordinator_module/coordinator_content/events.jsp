@@ -71,7 +71,7 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="../index.jsp">Home</a>
             <a href="./events.jsp">Events</a>
-            <a href="#">Programs</a>
+            <a href="./programs.jsp">Programs</a>
             <a href="#">Volunteer</a>
             <a href="#">About</a>
         </div>
@@ -89,14 +89,8 @@
                     <a href="./addEvents.jsp">
                         <input type="button" value="Add Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
                     </a><br><br>
-                    <a href="./updateEvent.jsp">
-                        <input type="button" value="Update Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
-                    </a><br><br>
-                    <a href="#">
-                        <input type="button" value="Suspend/Resume Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
-                    </a><br><br>
-                    <a href="#">
-                        <input type="button" value="Delete Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
+                    <a href="./eventView.jsp">
+                        <input type="button" value="Update/Delete Events" class="w3-button w3-purple" style="width: 50%; height: 40px">
                     </a>
                 </div>
                 </center>

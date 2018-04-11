@@ -71,8 +71,8 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="./index.jsp">Home</a>
             <a href="coordinator_content/events.jsp">Events</a>
-            <a href="#">Programs</a>
-            <a href="#">Volunteer</a>
+            <a href="coordinator_content/programs.jsp">Programs</a>
+            <a href="coordinator_content/vol_main.jsp">Volunteer/Committee</a>
             <a href="#">About</a>
         </div>
 
@@ -88,6 +88,8 @@
             <div class="w3-card w3-white w3-padding-32">
                 <center>
                 <div class="w3-container">
+                    <h1>Welcome</h1>
+                    <p>Open Sidebar to Start...</p>
                 </div>
                 </center>
             </div>

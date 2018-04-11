@@ -19,6 +19,7 @@
         <%
                 String s_id=request.getParameter("stud_id");
                 String s_psd=request.getParameter("stud_psd");
+                String acc="accounts";
             try{
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 String url="jdbc:mysql://localhost:3306/amritaeventms";
@@ -26,14 +27,20 @@
                 String psd="";
                 Connection con=DriverManager.getConnection(url, user, psd);
                 Statement st=con.createStatement();
-                String sql="SELECT * FROM `student_details` where STUDENT_ID='"+s_id+"' and STUDENT_PSD='"+s_psd+"'";
+                String sql="SELECT * FROM `committee_details` where login='"+s_id+"' and password='"+s_psd+"'";
                 ResultSet rs=st.executeQuery(sql);
                 rs.next();
-                if(rs!=null){
+                String type=rs.getString(4);
+                session.setAttribute("eventId", rs.getInt(1));
+                if(rs!=null&&(type.contains("registration"))){
                     session.setAttribute("username", rs.getString(3));
-                    response.sendRedirect("../index.jsp");
-                    //RequestDispatcher rd=request.getRequestDispatcher("../index.jsp");
-                    //rd.forward(request, response);
+                    session.setAttribute("userfield", rs.getString(4));
+                    response.sendRedirect("../committee_content/registration/regHome.jsp");
+                }
+                else if(rs!=null&&(type.contains("accounts"))){
+                    session.setAttribute("username", rs.getString(3));
+                    session.setAttribute("userfield", rs.getString(4));
+                    response.sendRedirect("../committee_content/accounts/accHome.jsp");
                 }
             }
             catch(Exception exp){

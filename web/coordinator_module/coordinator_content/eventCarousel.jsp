@@ -48,7 +48,19 @@
                 response.sendRedirect("./addEvents.jsp");
             }
             else if(type=="upEvent"){
-                
+                int eventId=Integer.parseInt(request.getParameter("event_id"));
+                String query="UPDATE `event_details` SET `event_name` = ?, `event_tag` = ?, `event_location` = ?, `event_date` = ?, `event_desc` = ?, `event_email` = ?, `event_phone` = ? WHERE `event_details`.`event_id` = ?";
+                PreparedStatement ps=con.prepareStatement(query);
+                ps.setString(1, eventName);
+                ps.setString(2, eventTag);
+                ps.setString(3, eventLoc);
+                ps.setDate(4, eventDate);
+                ps.setString(5, eventDesc);
+                ps.setString(6, eventEmail);
+                ps.setString(7, eventPhone);
+                ps.setInt(8, eventId);
+                ps.executeUpdate();
+                response.sendRedirect("./done.jsp");
             }
         }
         catch(Exception exp){

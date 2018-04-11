@@ -75,13 +75,22 @@
         <%
             String user=(String)session.getAttribute("username");
             session.setAttribute("eventFn", "upEvent");
-            //int sid=(Integer)session.getAttribute(request.getParameter("eid"));
+            int eid=Integer.parseInt(request.getParameter("subUp"));
+            String query="select * from event_details where event_id="+eid+"";
+            String url="jdbc:mysql://localhost:3306/amritaeventms";
+            String usr="root";
+            String password="";
+            try{
+                Connection con=DriverManager.getConnection(url, usr, password);
+                Statement st=con.createStatement();
+                ResultSet rs=st.executeQuery(query);
+                rs.next();
         %>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="../index.jsp">Home</a>
             <a href="./events.jsp">Events</a>
-            <a href="#">Programs</a>
+            <a href="./programs.jsp">Programs</a>
             <a href="#">Volunteer</a>
             <a href="#">About</a>
         </div>
@@ -93,33 +102,30 @@
                 <div class="w3-container" style="width: 50%">
                     <form method="post" action="eventCarousel.jsp">
                         <label for="">Event ID</label>
-                        <input type="text" style="width: 50%" class="w3-input w3-center w3-disabled" name="event_name"/>
-                        <br>
-                        <label for="">Coordinator</label>
-                        <input type="text" style="width: 50%" class="w3-input w3-center w3-disabled" name="event_name"/>
+                        <input type="text" style="width: 50%" value="<%=eid%>" class="w3-input w3-center w3-disabled" name="event_id"/>
                         <br>
                         <label for="">Event Name</label>
-                        <input type="text" placeholder="Enter Name" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_name"/>
+                        <input type="text" placeholder="Enter Name" value="<%=rs.getString(3)%>" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_name"/>
                         <br>
                         <label for="">Event Tag-line (Optional)</label>
-                        <input type="text" placeholder="Enter Tag-Line" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_tag"/>
+                        <input type="text" value="<%=rs.getString(4)%>" placeholder="Enter Tag-Line" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_tag"/>
                         <br>
                         <label for="">Event Location</label>
-                        <input type="text" placeholder="Enter Location" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
+                        <input type="text" value="<%=rs.getString(5)%>" placeholder="Enter Location" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
                         <br>
                         <label for="">Event Date</label>
-                        <input type="date" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_date"/>
+                        <input type="date" value="<%=rs.getDate(6)%>" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_date"/>
                         <br>
                         <label for="">Event Description</label><br>
-                        <textarea row="100" col="50" placeholder="Type Event Description here. Add '\n' for new paragraphs" class="w3-input" name="event_desc"></textarea>
+                        <textarea row="100" col="50" placeholder="Type Event Description here. Add '\n' for new paragraphs" class="w3-input" name="event_desc"><%=rs.getString(7)%></textarea>
                         <br>
                         <label for="">Event Contact (Phone)</label>
-                        <input type="tel" placeholder="Enter Phone" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_ph"/>
+                        <input type="tel" value="<%=rs.getString(9)%>" placeholder="Enter Phone" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_ph"/>
                         <br>
                         <label for="">Event Contact (Email)</label>
-                        <input type="email" placeholder="Enter E-Mail" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_em"/>
+                        <input type="email" value="<%=rs.getString(8)%>" placeholder="Enter E-Mail" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_em"/>
                         <br>
-                        <input type="submit" value="Submit" class="w3-button"/>
+                        <input type="submit" value="Update" class="w3-button"/>
                     </form>
                 </div>
                 </center>
@@ -142,5 +148,13 @@
                 document.body.style.backgroundColor = "white";
             }
         </script>
+        <%
+            }
+            catch(Exception exp){
+        %>
+            <%=exp.getMessage()%>
+        <%
+            }
+        %>
     </body>
 </html>

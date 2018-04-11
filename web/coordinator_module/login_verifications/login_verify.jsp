@@ -36,6 +36,9 @@
                     //RequestDispatcher rd=request.getRequestDispatcher("../index.jsp");
                     //rd.forward(request, response);
                 }
+                else if(rs.isLast()){
+                    response.sendRedirect("./invalid.jsp");
+                }
             }
             catch(Exception exp){
             }

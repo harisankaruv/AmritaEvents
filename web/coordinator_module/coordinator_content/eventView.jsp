@@ -89,7 +89,7 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="../index.jsp">Home</a>
             <a href="./events.jsp">Events</a>
-            <a href="#">Programs</a>
+            <a href="./programs.jsp">Programs</a>
             <a href="#">Volunteer</a>
             <a href="#">About</a>
         </div>
@@ -121,7 +121,8 @@
                             <th>Description</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th></th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         <tr>
                     <%
                             while(rs.next()){
@@ -136,7 +137,16 @@
                             <td><%=rs.getString(7)%></td>
                             <td><%=rs.getString(8)%></td>
                             <td><%=rs.getString(9)%></td>
-                            <td><a href="./upEvent.jsp" class="w3-text-blue">update...</a></td>
+                        <form method="post" action="upEvent.jsp">
+                            <td>
+                                <input type="submit" value="<%=rs.getInt(1)%>" name="subUp" class="w3-button w3-blue w3-text-blue w3-hover-blue w3-hover-text-blue" style="width: 100px">
+                            </td>
+                        </form>
+                        <form method="post" action="delEvent.jsp">
+                            <td>
+                                <input type="submit" value="<%=rs.getInt(1)%>" name="subDel" class="w3-button w3-red w3-text-red w3-hover-red w3-hover-text-red" style="width: 100px">
+                            </td>
+                        </form>
                         </tr>
                     <%
                             }

@@ -90,8 +90,8 @@
                 <center>
                 <div class="w3-container" style="width: 50%">
                     <form method="post" action="login_verify.jsp">
-                        <label for="stud_id">Volunteer ID</label>
-                        <input type="text" placeholder="Enter Staff ID" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="stud_id"/><br>
+                        <label for="stud_id">Username</label>
+                        <input type="text" placeholder="Enter Username" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="stud_id"/><br>
                         <label for="stud_psd">Password</label>
                         <input type="password" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="stud_psd"/>
                         <br>

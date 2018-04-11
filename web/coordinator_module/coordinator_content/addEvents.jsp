@@ -66,6 +66,18 @@
             }
         </style>
         <script>
+            function isEmpty(){
+                var ename=document.getElementById('ename').value;
+                var etag=document.getElementById('etag').value;
+                var eloc=document.getElementById('eloc').value;
+                var edate=document.getElementById('edate').value;
+                var edesc=document.getElementById('edesc').value;
+                var ephone=document.getElementById('ephone').value;
+                var eemail=document.getElementById('email').value;
+                if((ename!=="")&&(etag!=="")&&(eloc!=="")&&(edate!=="")&&(edesc!=="")&&(ephone!=="")&&(eemail!=="")){
+                    document.getElementById('sub').disabled=false;
+                }
+            }
             function gainfocus(){
                 document.getElementById('staff_id').focus();
             }
@@ -80,7 +92,7 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="../index.jsp">Home</a>
             <a href="./events.jsp">Events</a>
-            <a href="#">Programs</a>
+            <a href="./programs.jsp">Programs</a>
             <a href="#">Volunteer</a>
             <a href="#">About</a>
         </div>
@@ -100,27 +112,30 @@
                     %>
                     <form method="post" action="eventCarousel.jsp">
                         <label for="">Event Name</label>
-                        <input type="text" placeholder="Enter Name" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_name"/>
+                        <input type="text" placeholder="Enter Name" onchange="isEmpty()" style="width: 50%" id="ename" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_name"/>
                         <br>
                         <label for="">Event Tag-line (Optional)</label>
-                        <input type="text" placeholder="Enter Tag-Line" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_tag"/>
+                        <input type="text" placeholder="Enter Tag-Line" onchange="isEmpty()" style="width: 50%" id="etag" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_tag"/>
                         <br>
                         <label for="">Event Location</label>
-                        <input type="text" placeholder="Enter Location" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
+                        <input type="text" placeholder="Enter Location" onchange="isEmpty()" style="width: 50%" id="eloc" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
                         <br>
                         <label for="">Event Date</label>
-                        <input type="date" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_date"/>
+                        <input type="date" style="width: 50%" id="edate" onchange="isEmpty()" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_date"/>
                         <br>
                         <label for="">Event Description</label><br>
-                        <textarea row="100" col="50" placeholder="Type Event Description here. Add '\n' for new paragraphs" class="w3-input" name="event_desc"></textarea>
+                        <textarea row="100" col="50" id="edesc" onchange="isEmpty()" placeholder="Type Event Description here. Add '\n' for new paragraphs" class="w3-input" name="event_desc"></textarea>
                         <br>
                         <label for="">Event Contact (Phone)</label>
-                        <input type="tel" placeholder="Enter Phone" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_ph"/>
+                        <input type="tel" placeholder="Enter Phone" onchange="isEmpty()" id="ephone" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_ph"/>
                         <br>
                         <label for="">Event Contact (Email)</label>
-                        <input type="email" placeholder="Enter E-Mail" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_em"/>
+                        <input type="email" placeholder="Enter E-Mail" onchange="isEmpty()" id="eemail" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_em"/>
                         <br>
-                        <input type="submit" value="Submit" class="w3-button"/>
+                        <label for="">Volunteer Limit<br>*limit is same for all volunteer departments</label>
+                        <input type="email" placeholder="Enter Limit" onchange="isEmpty()" id="eemail" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center" name="lim"/>
+                        <br>
+                        <input type="submit" value="Submit" class="w3-button" id="sub"/>
                     </form>
                 </div>
                 </center>
