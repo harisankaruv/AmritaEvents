@@ -77,7 +77,20 @@
             <a href="#">Contact</a>
             <a href="./about_page/index.html">About</a>
         </div>
-
+        <%
+            String url, user, psd;
+            int eid=(Integer)session.getAttribute("event_id");
+            String query="select * from event_details where event_id="+eid;
+            url="jdbc:mysql://localhost:3306/amritaeventms";
+            user="root";
+            psd="";
+            try{
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con=DriverManager.getConnection(url, user, psd);
+                Statement st=con.createStatement();
+                ResultSet rs=st.executeQuery(query);
+                rs.next();
+        %>
         <div id="main" class="w3-container w3-black">
             <span style="font-size:30px;cursor:pointer;font-family: Calibri" onclick="openNav()">&#9776;|<b>Amrita</b> Events</span>
             <div class="w3-card w3-white w3-padding-32" style="margin-top: 5%; height: 100%; ">
@@ -85,7 +98,7 @@
                 <div class="w3-container" style="width: 50%">
                     <form method="post" action="submit_request.jsp">
                         <label for="">Event Name</label>
-                        <input type="text" placeholder="Enter Name" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center"/>
+                        <input type="text" value="<%=rs.getString(3)%>" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center"/>
                         <br>
                         <label for="">Student ID</label>
                         <input type="text" placeholder="Enter Name" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center"/>
@@ -112,7 +125,12 @@
                 <p class="w3-text-white">Copyright &copy T3</p>
             </div>
         </div>
-
+        <%
+            }
+            catch(Exception exp){
+                
+            }
+        %>
         <script>
             function openNav() {
                 document.getElementById("mySidenav").style.width = "250px";

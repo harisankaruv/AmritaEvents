@@ -4,6 +4,7 @@
     Author     : haris
 --%>
 
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -70,14 +71,16 @@
     </head>
     <body onload="gainfocus()">
         <%
-            String url, user, psd;
+            String url, user, psd, query;
             url="jdbc:mysql://localhost:3306/amritaeventms";
             user="root";
             psd="";
+            query="insert into committee values(?,?,?,?,?,?)";
             try{
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con=DriverManager.getConnection(url, user, psd);
-                Statement st=con.createStatement();
+                PreparedStatement ps=con.prepareStatement(query);
+                
         %>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
