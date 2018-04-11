@@ -83,18 +83,25 @@
             <div class="w3-card w3-white w3-padding-32" style="margin-top: 5%; height: 100%; ">
                 <center>
                 <div class="w3-container" style="width: 50%">
-                    <form method="post" action="eventCarousel.jsp">
+                    <form method="post" action="submit_request.jsp">
                         <label for="">Event Name</label>
-                        <input type="text" placeholder="Enter Name" onchange="isEmpty()" style="width: 50%" id="ename" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_name"/>
+                        <input type="text" placeholder="Enter Name" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center"/>
                         <br>
                         <label for="">Student ID</label>
-                        <input type="text" placeholder="Enter Name" onchange="isEmpty()" style="width: 50%" id="eloc" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
+                        <input type="text" placeholder="Enter Name" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center"/>
                         <br>
                         <label for="">Student Password</label>
-                        <input type="password" placeholder="Enter Password" onchange="isEmpty()" style="width: 50%" id="eloc" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
+                        <input type="password" placeholder="Enter Password" style="width: 50%" class="w3-input w3-animate-input w3-hover-gray w3-center"/>
                         <br>
                         <label for="">Volunteer Area</label><br>
-                        <input type="text" placeholder="Enter Area" onchange="isEmpty()" style="width: 50%" id="eloc" class="w3-input w3-animate-input w3-hover-gray w3-center" name="event_loc"/>
+                        <input list="volarea">
+                        <datalist id="volarea">
+                            <option value="regsitration">
+                            <option value="travel">
+                            <option value="accomodation">
+                            <option value="finance">
+                            <option value="food">
+                        </datalist>
                         <br>
                         <input type="submit" value="Submit" class="w3-button" id="sub"/>
                     </form>
